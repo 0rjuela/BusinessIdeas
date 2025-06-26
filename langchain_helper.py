@@ -36,14 +36,14 @@ def business_ideas(industry, audience):
         chain = prompt_template | llm | output_parser
 
         # Invoke the chain with the industry parameter
-        idea = chain.invoke({"industry": industry, 'audience': audience } )
+        idea = chain.invoke({"industry": industry, 'audience': audience })
         return idea
         
     except Exception as e:
         print(f"An error occurred during the OpenAI call: {e}")
         return "Error generating ideas."
 
-if __name__ == "__main__":  # Fixed: proper double underscores and spacing
+if __name__ == "__main__":  
     print("Generating business ideas...")
     # Now you can specify different industries
     result = business_ideas("fintech", "latin american young pepole, from 20 o 30 years old")  
